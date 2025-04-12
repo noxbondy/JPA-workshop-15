@@ -21,12 +21,15 @@ public class AppUser {
     private String password;
     private LocalDate regDate;
 
+
 @OneToOne
 @JoinColumn(name="details_id")
-private Details details;
+private UserDetails details;
 
-    public AppUser(String username, String password) {
+
+    public AppUser(String username, String password, UserDetails details) {
         this.username = username;
         this.password = password;
+        this.details = details;
     }
 }

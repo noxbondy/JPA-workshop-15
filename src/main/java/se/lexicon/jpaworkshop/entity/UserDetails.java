@@ -7,11 +7,10 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @EqualsAndHashCode
 @ToString
 @Entity
-public class Details {
+public class UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -21,4 +20,13 @@ public class Details {
     private String email;
     @Temporal(TemporalType.DATE)
     private LocalDate birthday;
+
+    public UserDetails() {
+    }
+
+    public UserDetails(String name, String email, LocalDate birthday) {
+        this.name = name;
+        this.email = email;
+        this.birthday = birthday;
+    }
 }
